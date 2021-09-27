@@ -17,7 +17,6 @@ def raoult_law_kvalue( T, P, a, *gamma ):
     #
     #  gamma - OPTIONAL activity coefficients for use in a modified Raoult's law.
     #
-    #
     # OUTPUT:
     #
     #  K - row vector containing the K-value for each species

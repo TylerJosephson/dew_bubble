@@ -1,4 +1,3 @@
-
 # reference:
 # https://www.linkedin.com/pulse/scraping-nist-webbook-python-extract-antoine-equation-oscar-fabi%C3%A1n/
 
