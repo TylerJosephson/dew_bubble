@@ -1,5 +1,5 @@
 def antoine( a, T ):
-    #
+    # More text in the comments
     # Ps = antoine( a, T )
     #
     # Uses Antoine's equation to obtain the vapor pressure of a substance given
@@ -21,5 +21,5 @@ def antoine( a, T ):
     # Code originally by: James C. Sutherland
     # Modified by: Tyler R. Josephson
 
-    Ps = 10.0**( a[:,0]-a[:,1] / ( a[:,2] + T ) )
+    Ps = 10.0**( a[:,0] - a[:,1] / ( a[:,2] + T ) )
     return Ps
