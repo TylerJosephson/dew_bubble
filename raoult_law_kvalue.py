@@ -1,6 +1,40 @@
 from antoine import antoine
 import numpy as np
 
+
+# conversion of given input temperature to Kelvin 
+def temp_choose():
+    temperature = 0
+    print("choose the unit of your input temperature (input 1, 2, or 3) ")
+    print("1. Celsius")
+    print("2. Farenheit")
+    print("3. Rankine")
+    print("4. Kelvin")
+    temperature=float(input("temp selection: "))
+    return temperature
+
+num_choice = temp_choose()
+if num_choice == 1 :
+    C = float(input("What is the temperature in Celsius: "))    
+    temperature = C + 273.15
+    print("The temperature in Kelvin is",round(temperature,2))    
+elif num_choice == 2:    
+    F = float(input("What is the temperature in Farenheit: "))    
+    temperature = ((F - 32 ) *(5/9))+273.15    
+    print("The temperature in Kelvin is",round(temperature,2))
+elif num_choice == 3:
+     R = float(input("What is the temperature in Rankine: "))     
+     temperature = 1.8*R    
+     print("The temperature in Kelvin is",round(temperature,2))
+else: 
+    temperature = float(input("What is the temperature in Kelvin: "))
+    print("The temperature in Kelvin is",round(temperature,2))
+
+
+
+
+
+
 def raoult_law_kvalue( T, P, a, *gamma ):
     # Calculates the equilibrium coefficient from Raoult's law
     # Change on line 6
