@@ -1,11 +1,9 @@
 from antoine import antoine
 import numpy as np
 
-#CONFLICT!!!
-
+# c
 def raoult_law_kvalue( T, P, a, *gamma ):
     # Calculates the equilibrium coefficient from Raoult's law
-    # Change on line 6
     # INPUTS:
     #
     #  T - temperature (units of K)
@@ -35,7 +33,6 @@ def raoult_law_kvalue( T, P, a, *gamma ):
         K *= gamma
 
     return K
-
 
 
 # This is intended to test things to ensure that it is working properly.
