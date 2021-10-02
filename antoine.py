@@ -1,7 +1,7 @@
 def antoine( a, T ):
     # More text in the comments
     # Ps = antoine( a, T )
-    #
+    # This is a Antoin function
     # Uses Antoine's equation to obtain the vapor pressure of a substance given
     # the coefficients of the equation:
     #  Ps = a1 - a2/(a3+T)
