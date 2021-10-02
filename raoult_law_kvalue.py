@@ -33,8 +33,8 @@ def raoult_law_kvalue( T, P, a, tempUnit="K", *gamma):
     # Modified by Tyler R. Josephson
     
     ns,nc = a.shape
-    
-    K = np.zeros(ns)
+    # makes np array of zeros
+    K = np.zeros(ns) 
     Ps = antoine(a, T, tempUnit)  
     K = Ps/P
     if gamma:
