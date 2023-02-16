@@ -1,5 +1,4 @@
 def antoine( a, T, tempUnit = "K"):
-    # More text in the comments
     # Ps = antoine( a, T, *tempUnit )
     #
     # Uses Antoine's equation to obtain the vapor pressure of a substance given
@@ -22,13 +21,6 @@ def antoine( a, T, tempUnit = "K"):
     # Code originally by: James C. Sutherland
     # Modified by: Tyler R. Josephson
     
-
-    ## what the f is going on 
-    # Another merge request - lol lmao 
-    # pull request 
-
-
-    # pull request from nikki
     if tempUnit.upper() == "C":
         T = T + 273.15
     elif tempUnit.upper() == "F":
