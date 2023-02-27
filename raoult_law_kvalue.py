@@ -1,7 +1,10 @@
 from antoine import antoine
 import numpy as np
 
+
+
 def raoult_law_kvalue( T, P, a, gamma):
+
     # Calculates the equilibrium coefficient from Raoult's law
     # INPUTS:
     #
@@ -14,7 +17,9 @@ def raoult_law_kvalue( T, P, a, gamma):
     #      and p in units of K and bar. Antoine coefficients from other sources 
     #      will require compatible units.
     #
+
     #  gamma - Activity coefficients for use in a modified Raoult's law. User can input "False" if gamma value is not necessary.
+
     #
     #  tempUnit - The units of temperature. Can be Kelvin, Fahrenheit, Celsius, or Rankine
     #             Parameter should be inputted as the first letter of the temperature scale.
@@ -24,7 +29,7 @@ def raoult_law_kvalue( T, P, a, gamma):
     #
     #  K - row vector containing the K-value for each species
     #
-    #  Example: (eg: raoult_law_kvalue(500, 2, [1,2,3], *gamma))        
+    #  Example: (eg: raoult_law_kvalue(500, 2, [1,2,3]))        
     #  
     # Code originally by James C. Sutherland
     # Modified by Tyler R. Josephson
@@ -34,8 +39,7 @@ def raoult_law_kvalue( T, P, a, gamma):
     K = np.zeros(ns) 
     Ps = antoine(a, T)  
     K = Ps/P
-    if gamma:
-        K *= gamma
+  
 
     return K
 
