@@ -20,7 +20,8 @@ def antoine( a, T):
     #
     # Code originally by: James C. Sutherland
     # Modified by: Tyler R. Josephson
-    # Changed comment
+    #Deleted to add comment
+    
     
     Ps = 10.0**( a[:,0] - a[:,1] / ( a[:,2] + T ) )
     return Ps
