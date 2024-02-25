@@ -1,19 +1,17 @@
-def antoine( a, T):
-    # Ps = antoine( a, T)
+def antoine( A, B, C, T):
+    # Psat = antoine( A, B, C, T)
     #
     # Uses Antoine's equation to obtain the vapor pressure of a substance given
     # the coefficients of the equation:
-    #  Ps = a1 - a2/(a3+T)
+    #  log(Psat) = A - B/(C+T)
     #
     # INPUTS:
-    #  a - the antoine coefficients with coeffients in columns and species in
-    #      rows. Coefficients from NIST expect units of bar and K.
+    #  A, B, C - the antoine coefficients with coeffients in columns and species in
+    #      rows. Coefficients units of bar and K.
     #  T - the temperature at which the vapor pressure is evaluated (K)
-    #  tempUnit - OPTIONAL the unit of temperature used
     #
     # OUTPUT:
-    #  Ps - row vector of species vapor pressures at the specified temperature,
-    #       typically in bar.
+    #  Psat - row vector of species vapor pressures at the specified temperature, in bar.
     #
     # The units depend on the units used for the coefficients. The user is
     # responsible for maintaining consistency with units. NIST uses bar and K.
@@ -22,5 +20,5 @@ def antoine( a, T):
     # Modified by: Tyler R. Josephson
     # Changed comment
     
-    Ps = 10.0**( a[:,0] - a[:,1] / ( a[:,2] + T ) )
-    return Ps
+    Psat = 10.0**( A[:] - B[:] / ( C[:] + T ) )
+    return Psat
