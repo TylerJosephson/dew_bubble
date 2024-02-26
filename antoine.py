@@ -17,6 +17,7 @@ def antoine( a, T):
     #
     # The units depend on the units used for the coefficients. The user is
     # responsible for maintaining consistency with units. NIST uses bar and K.
+    # Antoine coefficients must be put in a numpy array for function to execute.
     #
     # Code originally by: James C. Sutherland
     # Modified by: Tyler R. Josephson
