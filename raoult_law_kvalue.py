@@ -45,11 +45,12 @@ def raoult_law_kvalue( T, P, a, *gamma):
 if __name__ == '__main__':
     from scipy.optimize import newton
 
-    P = 101325  # Pressure in Pa
+    P = 101325*e-5 # Pressure in bar
 
     # We should update this example! Units of test not consistent with NIST
-    propane = [6.80398, 803.810,  246.990]
-    benzene = [6.90565, 1211.033, 220.79 ]
+    # Changed ABC values to use in units of K and bar
+    propane = [4.53678, 1149.36, 24.906]
+    benzene = [4.72583, 1660.652, -1.461]
     antoineCoefs = np.array( [propane, benzene] )
 
     z = 0.5
