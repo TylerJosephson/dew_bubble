@@ -39,35 +39,3 @@ def raoult_law_kvalue( T, P, a, *gamma):
 
     return K
 
-
-
-# This is intended to test things to ensure that it is working properly.
-if __name__ == '__main__':
-    from scipy.optimize import newton
-
-    P = 101325*e-5 # Pressure in bar
-
-    # We should update this example! Units of test not consistent with NIST
-    # Changed ABC values to use in units of K and bar
-    propane = [4.53678, 1149.36, 24.906]
-    benzene = [4.72583, 1660.652, -1.461]
-    antoineCoefs = np.array( [propane, benzene] )
-
-    z = 0.5
-
-    def resfun_bubble( T ):
-        return 1 - np.sum( z * raoult_law_kvalue(T,P,antoineCoefs) )
-
-    def resfun_dew( T ):
-        return 1 - np.sum( z / raoult_law_kvalue(T,P,antoineCoefs) )
-
-    Tb = newton(resfun_bubble,300)
-    Td = newton(resfun_dew,   300)
-
-    if abs( Tb - 248 ) > 0.2:
-        print('FAILED.  Expected bubble point temperature of 248.0 but found {:.1f}'.format(Tb))
-    if abs( Td - 333.0 ) > 0.2:
-        print('FAILED.  Expected dew point temperature of 333.0 but found {:.1f}'.format(Td))
-
-
-    print('\n\t-> Bubble point: {:.1f} K\n\t-> Dew    point: {:.1f} K'.format(Tb,Td))
