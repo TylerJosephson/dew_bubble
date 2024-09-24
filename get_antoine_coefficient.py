@@ -32,7 +32,7 @@ def get_antoine_coefficient(Name, Temperature):
     table = get_html_table(Name)
 
     # Extract the rows from the table. Knowing what tags have an HTML table.
-    # Also, knowing that the fist row with he table header does not have the
+    # Also, knowing that the fist row with the table header does not have the
     # class attribute 'exp' so we obtain just the rows with data.
     # The find_all function from BeautifulSoup return a list
     rows = table.find_all('tr', class_='exp')
@@ -58,8 +58,8 @@ def get_antoine_coefficient(Name, Temperature):
         # For the temperatures, we have a range and we need to extract each
         # limit (lower and higher) and put them in an extra list. So
         # Temperatures variable will be a list of lists.
-        lower_lim = float(cols[0].text.replace(" ","").split('-')[0])
-        higher_lim = float(cols[0].text.replace(" ","").split('-')[1])
+        lower_lim = float(cols[0].text.replace(" ","").split('to')[0])
+        higher_lim = float(cols[0].text.replace(" ","").split('to')[1])
         Temperatures.append([lower_lim, higher_lim])
 
 
