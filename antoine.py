@@ -1,5 +1,4 @@
-def antoine( a: float, T: float) -> float:
-    '''
+def antoine( a, T):
     # Ps = antoine( a, T)
     #
     # Uses Antoine's equation to obtain the vapor pressure of a substance given
@@ -22,6 +21,6 @@ def antoine( a: float, T: float) -> float:
     # Code originally by: James C. Sutherland
     # Modified by: Tyler R. Josephson
     # Changed comment
-    '''
+    
     Ps = 10.0**( a[:,0] - a[:,1] / ( a[:,2] + T ) )
     return Ps
