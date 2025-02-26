@@ -32,7 +32,7 @@ def antoine( a, T):
     e = np.char.endswith(d,'.0')
 
     if e == False:
-        Ps = 'Error! You are inputting either too many or too little Antoine coefficients. This function only accepts multiples of three.'
+        Ps = 'Error! This function only accepts a 3n count of Antoine coefficients.'
         print(Ps)
     if len(b)==1:
         Ps = 10**(a[0]-a[1] / (a[2] + T) )
