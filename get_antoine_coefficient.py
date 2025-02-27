@@ -10,8 +10,7 @@ def get_response(url):
 def get_html_table(Name):
 
     # We treat the url attaching the Name variable to it.
-    url = str.format('https://webbook.nist.gov/cgi/cbook.cgi?Name={0}&Mask=4',
-        Name.lower())
+    url = f"https://webbook.nist.gov/cgi/cbook.cgi?Name={Name.lower()}&Mask=4"
 
     # Function to get the request made, see above.
     raw_html = get_response(url)
