@@ -24,18 +24,15 @@ def antoine( a, T):
     >>> Ps = antoine(a, T)
     
     """
-    import numpy as np
+   import numpy as np
     a = np.array(a)
     b = np.shape(a)
-    c = np.size(a)
-    d = str(c/3)
-    e = np.char.endswith(d,'.0')
-
-    if e == False:
-        Ps = 'Error! This function only accepts a 3n count of Antoine coefficients.'
-        print(Ps)
+    
     if len(b)==1:
         Ps = 10**(a[0]-a[1] / (a[2] + T) )
+        Ps = np.round(Ps,3)
     else:
         Ps = 10.0**(a[:,0]-a[:,1] / ( a[:,2] + T ) )
+        Ps = np.round(Ps,3)
+        
     return Ps
