@@ -30,11 +30,11 @@ def raoult_law_kvalue( T, P, a, *gamma):
     # Modified by Tyler R. Josephson
     
     ns,nc = a.shape
-    # makes np array of zeros
-    K = np.zeros(ns) 
-    Ps = antoine(a, T)  
-    K = Ps/P
+    # removed the array of zeros as it should directly work, efficiency wise
+    Ps = antoine(a, T)  # pulls the constant values and Temperature in Celcius into antiones eqn to find sat pressure
+    K = Ps/P 
     if gamma:
+        
         K *= gamma
 
     return K
