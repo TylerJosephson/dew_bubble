@@ -34,8 +34,10 @@ def raoult_law_kvalue( T, P, a, *gamma):
     K = np.zeros(ns) 
     Ps = antoine(a, T)  
     K = Ps/P
-    if gamma:
+    if gamma = 1:
+        print('The mixture is ideal')
+    else
+       print('The mixture is not ideal') 
         K *= gamma
-
     return K
 
