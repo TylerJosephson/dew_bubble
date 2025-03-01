@@ -1,26 +1,38 @@
 def antoine( a, T):
-    # Ps = antoine( a, T)
-    #
-    # Uses Antoine's equation to obtain the vapor pressure of a substance given
-    # the coefficients of the equation:
-    #  Ps = a1 - a2/(a3+T)
-    #
-    # INPUTS:
-    #  a - the antoine coefficients with coeffients in columns and species in
-    #      rows. Coefficients from NIST expect units of bar and K.
-    #  T - the temperature at which the vapor pressure is evaluated (K)
-    #  tempUnit - OPTIONAL the unit of temperature used
-    #
-    # OUTPUT:
-    #  Ps - row vector of species vapor pressures at the specified temperature,
-    #       typically in bar.
-    #
-    # The units depend on the units used for the coefficients. The user is
-    # responsible for maintaining consistency with units. NIST uses bar and K.
-    #
-    # Code originally by: James C. Sutherland
-    # Modified by: Tyler R. Josephson
-    # Changed comment
+"""Antoine's equation calculator
+
+    This uses Antoine's equation to calculate the vapor pressure of a fluid
+    given the coefficients of the equation: Ps = a1 - a2/(a3 + T).
     
-    Ps = 10.0**( a[:,0] - a[:,1] / ( a[:,2] + T ) )
+    Parameters
+    ----------
+    a : the Antoine coefficients with coefficients in columns and species in rows.
+    T : the temperature to evaluate the vapor pressure at.
+    
+    Returns
+    -------
+    Ps : row vector of vapor pressures for all species at the specified temperature
+
+    The units depend on the units used for the coefficients.  The user is
+    responsible for maintaining consistency with units.  Customarily,
+    coefficients are supplied for pressure in mmHg and T in Celsius. 
+    
+    The coefficient argument 'a' can be in typical Python list notation. 
+    
+    Examples
+    --------
+    >>> Ps = antoine(a, T)
+    
+    """
+   import numpy as np
+    a = np.array(a)
+    b = np.shape(a)
+    
+    if len(b)==1:
+        Ps = 10**(a[0]-a[1] / (a[2] + T) )
+        Ps = np.round(Ps,3)
+    else:
+        Ps = 10.0**(a[:,0]-a[:,1] / ( a[:,2] + T ) )
+        Ps = np.round(Ps,3)
+        
     return Ps
